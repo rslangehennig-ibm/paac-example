@@ -1,1 +1,1 @@
-echo "This step will perform the deployment"
+echo "This step will perform the deployment of our COOL application"
