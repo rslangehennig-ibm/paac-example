@@ -1,1 +1,2 @@
 echo "This step will perform the deployment of our REALLY COOL application"
+echo "This is a demo on Oct 17, 2024"
