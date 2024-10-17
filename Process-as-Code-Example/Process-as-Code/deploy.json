@@ -1,0 +1,82 @@
+{
+    "processType": "component",
+    "processName": "Deploy",
+    "parent": "Process-as-Code",
+    "processVersion": "",
+    "process": {
+        "start": {
+            "type": "start",
+            "start": [
+                "Download Artifacts"
+            ]
+        },
+        "Download Artifacts": {
+            "type": "plugin",
+            "plugin": "UrbanCode Deploy Versioned File Storage",
+            "command": "Download Artifacts",
+            "properties": {
+                "directoryOffset": ".",
+                "artifactSetBaseDir": "",
+                "fileIncludePatterns": "**\/*",
+                "fileExcludePatterns": "",
+                "syncMode": "FULL",
+                "handleIncrementalVersions": "false",
+                "fullVerification": "true",
+                "setFileExecuteBits": "false",
+                "verifyFileIntegrity": "false",
+                "charset": "",
+                "versionId": "${p:version.id}",
+                "versionType": "${p:version.type}",
+                "serverUrl": "${p:server.url}",
+                "compId": "${p:component.id}",
+                "resId": "${p:resource.id}",
+                "envId": "${p:environment.id}",
+                "maxMemory": "1G",
+                "label": ""
+            },
+            "on": {
+                "success": {
+                    "start": [
+                        "Turn off Monitoring Agent"
+                    ]
+                }
+            }
+        },
+        "Turn off Monitoring Agent": {
+            "type": "plugin",
+            "plugin": "Shell",
+            "command": "Shell",
+            "properties": {
+                "directoryOffset": ".",
+                "shellInterpreter": "",
+                "runAsDaemon": "false",
+                "outputFile": "",
+                "tempDirectory": "${p?:agent\/temporaryDirectory}",
+                "scriptFile": "turn-off-monitoring.txt"
+            },
+            "on": {
+                "success": {
+                    "start": [ "Deploy Application" ]
+                }
+            }
+        },
+        "Deploy Application": {
+            "type": "plugin",
+            "plugin": "Shell",
+            "command": "Shell",
+            "properties": {
+                "directoryOffset": ".",
+                "shellInterpreter": "",
+                "runAsDaemon": "false",
+                "outputFile": "",
+                "tempDirectory": "${p?:agent\/temporaryDirectory}",
+                "scriptFile": "deploy-app.txt"
+            },
+            "on": {
+                "success": {
+                    "finish": ""
+                }
+            }
+        }
+    }
+}
