@@ -1,7 +1,6 @@
 {
-    "processType": "component",
-    "processName": "Deploy",
-    "parent": "Process-as-Code",
+    "component": "Process-as-Code",
+    "process-name": "Deploy",
     "processVersion": "",
     "process": {
         "start": {
