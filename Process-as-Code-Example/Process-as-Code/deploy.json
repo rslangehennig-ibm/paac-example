@@ -9,7 +9,7 @@
                 "Download Artifacts"
             ]
         },
-        "Download Artifacts": {
+        "Download Artifacts from codestation": {
             "type": "plugin",
             "plugin": "UrbanCode Deploy Versioned File Storage",
             "command": "Download Artifacts",
