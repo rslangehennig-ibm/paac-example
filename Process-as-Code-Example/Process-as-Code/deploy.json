@@ -20,7 +20,7 @@
                 "fileExcludePatterns": "",
                 "syncMode": "FULL",
                 "handleIncrementalVersions": "false",
-                "fullVerification": "false",
+                "fullVerification": "true",
                 "setFileExecuteBits": "false",
                 "verifyFileIntegrity": "false",
                 "charset": "",
