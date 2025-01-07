@@ -51,4 +51,7 @@ then
       echo "Changes were found to the component process.   Running the upload-component-process command..."
       #upload-component-process $(deploy-username) $(deploy-password) $(deploy-server-url) Deploy Process-as-Code deploy.json
       upload-component-process $(deploy-username) $(deploy-password) $(deploy-server-url) deploy.json "$(Build.SourceVersionMessage)"
+      echo "Upload of component process was successful"
+else
+      echo "No code changes found"
 fi
