@@ -1,1 +1,35 @@
-This is a test
+---
+component: "Process-as-Code-YAML"
+process-name: "Deploy"
+process:
+  start:
+    type: "start"
+    start:
+    - "Download Artifacts"
+  Download Artifacts:
+    type: "plugin"
+    plugin: "UrbanCode Deploy Versioned File Storage"
+    command: "Download Artifacts"
+    properties:
+      directoryOffset: "."
+      artifactSetBaseDir: ""
+      fileIncludePatterns: "**/*"
+      fileExcludePatterns: ""
+      syncMode: "FULL"
+      handleIncrementalVersions: "false"
+      fullVerification: "true"
+      setFileExecuteBits: "false"
+      verifyFileIntegrity: "false"
+      charset: ""
+      versionId: "${p:version.id}"
+      versionType: "${p:version.type}"
+      serverUrl: "${p:server.url}"
+      compId: "${p:component.id}"
+      resId: "${p:resource.id}"
+      envId: "${p:environment.id}"
+      maxMemory: "1G"
+      label: ""
+    "on":
+      success:
+        finish: ""
+
