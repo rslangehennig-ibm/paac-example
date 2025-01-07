@@ -33,7 +33,7 @@ process:
       success:
         start: "Deploy Application"
 
-  Deploy Application:
+  "Deploy Application":
     type: "plugin"
     plugin: "Shell"
     command: "Shell"
@@ -43,7 +43,7 @@ process:
       runAsDaemon: "false"
       outputFile: ""
       tempDirectory: "${p?:agent\/temporaryDirectory}"
-      scriptBody: "echo hello world"
+      scriptBody: "scriptFile/deploy-app.txt"
     "on":
       success:
         finish: ""
