@@ -32,7 +32,6 @@ process:
     "on":
       success:
         start: "Deploy Application"
-
   "Deploy Application":
     type: "plugin"
     plugin: "Shell"
