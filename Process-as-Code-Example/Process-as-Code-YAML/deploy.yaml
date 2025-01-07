@@ -31,5 +31,19 @@ process:
       label: ""
     "on":
       success:
-        finish: ""
+        start: "Deploy Application"
 
+  Deploy Application:
+    type: "plugin"
+    plugin: "Shell"
+    command: "Shell"
+    properties:
+      directoryOffset: "."
+      shellInterpreter: ""
+      runAsDaemon: "false"
+      outputFile: ""
+      tempDirectory: "${p?:agent\/temporaryDirectory}"
+      scriptBody: "echo hello world"
+    "on":
+      success:
+        finish: ""
