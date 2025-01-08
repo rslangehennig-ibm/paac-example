@@ -1,1 +1,63 @@
-{"application":"Process-as-Code-Example","process-name":"Deploy-PAAC","process":{"start":{"type":"start","start":["Install: \"Process-as-Code\""]},"Install: \"Process-as-Code\"":{"type":"install-component","component":"Process-as-Code","process":"Deploy","select-versions-without-inventory-status":"Active","fail-fast":false,"ignore-child-warnings":false,"max-concurrent-processes":-1,"properties":{"allowFailure":"false","activity.componentProcess.id":"1929acd8-aaac-8391-719f-64e174d1b034","isIgnoreChildWarnings":"false","activity.component.id":"1929ac7e-3cb2-6b21-f24d-93b2f1a5e712"},"on":{"success":{"start":["Install: \"Process-as-Code-YAML\""]}}},"Install: \"Process-as-Code-YAML\"":{"type":"install-component","component":"Process-as-Code-YAML","process":"Deploy","select-versions-without-inventory-status":"Active","fail-fast":false,"ignore-child-warnings":false,"max-concurrent-processes":-1,"properties":{"allowFailure":"false","activity.componentProcess.id":"19434d9a-c65b-d92e-64a9-35d7abd803d2","isIgnoreChildWarnings":"false","activity.component.id":"19434d97-034c-77ce-d131-7851a204edac"},"on":{"success":{"start":["Manually Verify the application for now"]}}},"Manually Verify the application for now":{"type":"application-manual-task","deployingUserOnly":false,"roleRestrictionData":{"roleRestrictions":[]},"notification-template":"TaskCreated","on":{"success":{"finish":""}}}}}
+{
+    "application": "Process-as-Code-Example",
+    "process-name": "Deploy-PAAC",
+    "process": {
+        "start": {
+            "type": "start",
+            "start": ["Install: \"Process-as-Code\""]
+        },
+        "Install: \"Process-as-Code\"": {
+            "type": "install-component",
+            "component": "Process-as-Code",
+            "process": "Deploy",
+            "select-versions-without-inventory-status": "Active",
+            "fail-fast": false,
+            "ignore-child-warnings": false,
+            "max-concurrent-processes": -1,
+            "properties": {
+                "allowFailure": "false",
+                "activity.componentProcess.id": "1929acd8-aaac-8391-719f-64e174d1b034",
+                "isIgnoreChildWarnings": "false",
+                "activity.component.id": "1929ac7e-3cb2-6b21-f24d-93b2f1a5e712"
+            },
+            "on": {
+                "success": {
+                    "start": ["Install: \"Process-as-Code-YAML\""]
+                }
+            }
+        },
+        "Install: \"Process-as-Code-YAML\"": {
+            "type": "install-component",
+            "component": "Process-as-Code-YAML",
+            "process": "Deploy",
+            "select-versions-without-inventory-status": "Active",
+            "fail-fast": false,
+            "ignore-child-warnings": false,
+            "max-concurrent-processes": -1,
+            "properties": {
+                "allowFailure": "false",
+                "activity.componentProcess.id": "19434d9a-c65b-d92e-64a9-35d7abd803d2",
+                "isIgnoreChildWarnings": "false",
+                "activity.component.id": "19434d97-034c-77ce-d131-7851a204edac"
+            },
+            "on": {
+                "success": {
+                    "start": ["Manually Verify the application installation"]
+                }
+            }
+        },
+        "Manually Verify the application installation": {
+            "type": "application-manual-task",
+            "deployingUserOnly": false,
+            "roleRestrictionData": {
+                "roleRestrictions": []
+            },
+            "notification-template": "TaskCreated",
+            "on": {
+                "success": {
+                    "finish": ""
+                }
+            }
+        }
+    }
+}
