@@ -42,19 +42,6 @@
             },
             "on": {
                 "success": {
-                    "start": ["Manually Verify the application installation"]
-                }
-            }
-        },
-        "Manually Verify the application installation": {
-            "type": "application-manual-task",
-            "deployingUserOnly": false,
-            "roleRestrictionData": {
-                "roleRestrictions": []
-            },
-            "notification-template": "TaskCreated",
-            "on": {
-                "success": {
                     "finish": ""
                 }
             }
