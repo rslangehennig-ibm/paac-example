@@ -1,6 +1,1 @@
 echo "This step will perform the deployment of our REALLY COOL application"
-echo "This is a demo on Oct 17, 2024"
-echo "This is another demo on November 11, 2024"
-echo "It is almost Christmas 2024"
-echo "Testing on January 6, 2025"
-echo "Testing with Bharath on 1-7-2025"
