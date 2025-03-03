@@ -2,4 +2,3 @@ echo "This step will perform the deployment of our REALLY COOL application"
 
 echo "Changing step script for CAB session on 02-20-2025"
 
-echo "Demo for Stephen on 02-24-2025"
